@@ -1258,6 +1258,7 @@ export var Gantt = (function () {
     class Popup {
         constructor(parent, custom_html) {
             this.parent = parent;
+            this.parent.style.background = 'rgba(0, 0, 0, 0)';
             this.custom_html = custom_html;
             this.make();
         }
@@ -1290,6 +1291,7 @@ export var Gantt = (function () {
                 html += '<div class="pointer"></div>';
                 this.parent.innerHTML = html;
                 this.pointer = this.parent.querySelector('.pointer');
+                this.parent.style.width = '100%';
             } else {
                 // set data
                 this.title.innerHTML = options.title;
@@ -1322,6 +1324,7 @@ export var Gantt = (function () {
         hide() {
             this.parent.style.opacity = 0;
             this.parent.style.left = 0;
+            this.parent.style.width = '0%';
         }
     }
 
